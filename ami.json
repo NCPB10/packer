@@ -13,7 +13,7 @@
           "root-device-type": "ebs",
           "virtualization-type": "hvm"
         },
-        "owners": ["637423513260"],  
+        "owners": ["137112412989"],  
         "most_recent": true
       },
       "instance_type": "{{user `instance_type`}}",
