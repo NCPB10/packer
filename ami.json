@@ -1,0 +1,35 @@
+{
+  "variables": {
+    "aws_region": "ap-south-1",
+    "instance_type": "t2.micro"
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "region": "{{user `aws_region`}}",
+      "source_ami_filter": {
+        "filters": {
+          "name": "amzn2-ami-hvm-*-x86_64-gp2",
+          "root-device-type": "ebs",
+          "virtualization-type": "hvm"
+        },
+        "owners": ["637423513260"],  
+        "most_recent": true
+      },
+      "instance_type": "{{user `instance_type`}}",
+      "ssh_username": "ec2-user",
+      "ami_name": "custom-amazon-linux-{{timestamp}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sudo yum update -y",
+        "sudo yum install -y git docker",
+        "sudo systemctl enable docker",
+        "sudo systemctl start docker"
+      ]
+    }
+  ]
+}
