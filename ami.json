@@ -27,6 +27,7 @@
       "inline": [
         "sudo yum update -y",
         "sudo yum install -y git docker",
+        "sudo yum install maven -y"
         "sudo systemctl enable docker",
         "sudo systemctl start docker"
       ]
