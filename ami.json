@@ -26,8 +26,7 @@
       "type": "shell",
       "inline": [
         "sudo yum update -y",
-        "sudo yum install -y git docker",
-        "sudo yum install -y maven"
+        "sudo yum install -y git maven docker",
         "sudo systemctl enable docker",
         "sudo systemctl start docker"
       ]
